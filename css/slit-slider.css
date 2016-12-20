@@ -36,7 +36,7 @@
 	text-indent: -90000px;
 	margin-top: -40px;
 	cursor: pointer;
-	
+
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
@@ -61,23 +61,23 @@
 }
 
 #nav-arrows > a {
-  border: 1px solid #fff;
-  color: #fff;
-  display: block;
-  height: 60px;
-  line-height: 76px;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  width: 60px;
-  z-index: 20;
-  margin-top: -30px;
+	border: 1px solid #fff;
+	color: #fff;
+	display: block;
+	height: 60px;
+	line-height: 76px;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	width: 60px;
+	z-index: 20;
+	margin-top: -30px;
 
-    -webkit-transition: all 0.5s ease 0s;
-       -moz-transition: all 0.5s ease 0s;
-        -ms-transition: all 0.5s ease 0s;
-         -o-transition: all 0.5s ease 0s;
-            transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
 }
 
 #nav-arrows > a.sl-prev {
@@ -116,9 +116,9 @@
 	background: #ddd;
 	background: rgba(150,150,150,0.4);
 	cursor: pointer;
-	box-shadow: 
-		0 1px 1px rgba(255,255,255,0.4), 
-		inset 0 1px 1px rgba(0,0,0,0.1);
+	box-shadow:
+	0 1px 1px rgba(255,255,255,0.4),
+	inset 0 1px 1px rgba(0,0,0,0.1);
 }
 
 .nav-dots span {
@@ -129,18 +129,18 @@
 	-ms-transition: all 0.2s;
 	-o-transition: all 0.2s;
 	transition: all 0.2s;
-	box-shadow: 
-		0 1px 1px rgba(255,255,255,0.4), 
-		inset 0 1px 1px rgba(0,0,0,0.1),
-		0 0 0 2px rgba(255,255,255,0.5);
+	box-shadow:
+	0 1px 1px rgba(255,255,255,0.4),
+	inset 0 1px 1px rgba(0,0,0,0.1),
+	0 0 0 2px rgba(255,255,255,0.5);
 }
 
 .nav-dots span.nav-dot-current,
 .nav-dots span:hover {
-	box-shadow: 
-		0 1px 1px rgba(255,255,255,0.4), 
-		inset 0 1px 1px rgba(0,0,0,0.1),
-		0 0 0 5px rgba(255,255,255,0.5);
+	box-shadow:
+	0 1px 1px rgba(255,255,255,0.4),
+	inset 0 1px 1px rgba(0,0,0,0.1),
+	0 0 0 5px rgba(255,255,255,0.5);
 }
 
 .nav-dots span.nav-dot-current:after {
@@ -155,13 +155,13 @@
 }
 
 .bg-img-1 {
-	background-image: url(../img/slider/banner.jpg);
+	background-image: url(../img/slider/elegancia2.jpg);
 }
 .bg-img-2 {
-	background-image: url(../img/slider/affinity.jpeg);
+	background-image: url(../img/slider/profesionalidad.jpg);
 }
 .bg-img-3 {
-	background-image: url(../img/slider/cinelli.jpeg);
+	background-image: url(../img/slider/contancia.jpg);
 }
 
 
@@ -190,7 +190,7 @@
 	-ms-animation: fadeOut 1s ease-in-out both;
 	animation: fadeOut 1s ease-in-out both;
 }
-.sl-trans-back-elems .caption-content span,,
+.sl-trans-back-elems .caption-content span,
 .sl-trans-back-elems .caption-content a {
 	-webkit-animation: fadeOut 1s linear both;
 	-moz-animation: fadeOut 1s linear both;
