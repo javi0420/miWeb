@@ -78,13 +78,14 @@
 				<!-- main nav -->
                 <nav class="collapse navbar-collapse navbar-right" role="navigation">
                     <ul id="nav" class="nav navbar-nav">
-                        <li><a href="#body">Home</a></li>
+                        <li><a href="#body">Principal</a></li>
                         <!--<li><a href="#service">Service</a></li>-->
                         <li><a href="#portfolio">Proyectos</a></li>
                         <li><a href="#testimonials">Sobre mí</a></li>
-<!--
-                        <li><a href="#price">price</a></li>
--->
+						<!--<li><a href="Curriculum.pdf" target="_blank">Currículum vítae</a></li>-->
+						<li><a href="#" onclick="window.open('Curriculum.pdf')">Currículum vítae</a></li>
+
+						<!--<li><a href="#price">price</a></li>-->
                         <li><a href="#contact">Contacto</a></li>
                     </ul>
                 </nav>
@@ -212,7 +213,7 @@
 									 <img src="img/fotoCurriculum.jpg" class="pull-left" alt="member">
 									 <p>
 										 Bienvenido a mi sitio web, aqui podras ver mi curriculum, los proyectos desarrollados por mi, conocer un poco mi forma de ser y de trabajo.
-										 <br>Espero que les guste un saludo.
+										 <br>Espero que les guste.
 									 </p>
 						     	 </div>
 						       	<a href="#testimonials" class="btn btn-border btn-effect pull-right">Un poco más</a>
@@ -513,20 +514,23 @@
 						
 						
 						<div class="col-md-7 contact-form wow animated fadeInLeft">
-							<form action="#" method="post">
+							<!--role="form" action="php/contacto.php" method="POST" id="contacto" title="Nombre"-->
+							<form action="php/contacto.php" method="post" id="contacto">
 								<div class="input-field">
-									<input type="text" name="name" class="form-control" placeholder="Nombre...">
+									<input type="text" name="name" required="required" class="form-control" placeholder="Nombre...">
 								</div>
 								<div class="input-field">
-									<input type="email" name="email" class="form-control" placeholder="Email...">
+									<input type="email" name="email" required="required" class="form-control" placeholder="Email...">
 								</div>
 								<div class="input-field">
-									<input type="text" name="subject" class="form-control" placeholder="Asunto...">
+									<input type="text" name="subject" required="required" class="form-control" placeholder="Asunto...">
 								</div>
 								<div class="input-field">
-									<textarea name="message" class="form-control" placeholder="Mensaje..."></textarea>
+									<textarea name="message" required="required" class="form-control" placeholder="Mensaje..."></textarea>
 								</div>
-						       	<button type="submit" id="submit" class="btn btn-blue btn-effect">Enviar</button>
+								<input type="submit" name="enviar" tabindex="7" value="Enviar">
+								<input type="reset" tabindex="8" value="Borrar">
+								<input type="hidden" name="estado" value="1">
 							</form>
 						</div>
 						
@@ -568,11 +572,14 @@
 						</form>-->
 						<div class="footer-social">
 							<ul>
-								<li class="wow animated zoomIn"><a href="#"><i class="fa fa-thumbs-up fa-3x"></i></a></li>
+								<!--<li class="wow animated zoomIn"><a href="#"><i class="fa fa-thumbs-up fa-3x"></i></a></li>
 								<li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="#"><i class="fa fa-twitter fa-3x"></i></a></li>
 								<li class="wow animated zoomIn" data-wow-delay="0.6s"><a href="#"><i class="fa fa-skype fa-3x"></i></a></li>
 								<li class="wow animated zoomIn" data-wow-delay="0.9s"><a href="#"><i class="fa fa-dribbble fa-3x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="1.2s"><a href="#"><i class="fa fa-youtube fa-3x"></i></a></li>
+								<li class="wow animated zoomIn" data-wow-delay="1.2s"><a href="#"><i class="fa fa-youtube fa-3x"></i></a></li>-->
+								<li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="https://www.linkedin.com/in/francisco-javier-lindo-v%C3%A1zquez-0809b244?trk=nav_responsive_tab_profile_pic" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+								<li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="https://twitter.com/Lindo0420" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+								<li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="https://www.facebook.com/flindovazquez" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
 							</ul>
 						</div>
 						
