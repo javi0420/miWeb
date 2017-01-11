@@ -40,6 +40,134 @@
 
 		<!-- Modernizer Script for old Browsers -->
         <script src="js/modernizr-2.6.2.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" charset="utf-8" async defer>
+
+			//objeto
+
+			//Creamos un objeto
+			var app = {}
+			//almacenamos en este objeto la url con nuestra api y nuestra key que seria el appid, aparte de otros paramentros
+			// como metric para que los grados aparezcan en kelvin y lang que es el lenguaje en este caso español.
+			app.url = "http://api.openweathermap.org/data/2.5/forecast?id=3118848&appid=f02f9e55c77a7c0909f0970944e9913a&units=metric";
+
+
+			cargarDatos();
+			function cargarDatos(){
+				$.ajax({
+					url: app.url,
+					success: function(data){
+						app.datos = data;
+
+						// app.procesaDatos = function(){
+						//guardamos los datos por separado en variables
+
+						//cogemos la temperatura y la almacenamos en app.temperatura
+						app.temperatura = app.datos.list[0].main.temp, 10;
+						app.temperaturaMin = app.datos.list[0].main.temp_min, 10;
+						app.temperaturaMax = app.datos.list[0].main.temp_max, 10;
+						app.humedad = app.datos.list[0].main.humidity;
+
+						var condicionIcono = app.datos.list[0].weather[0].icon;
+
+						//obtenemos el icono (una clase) para el código que indicamos
+
+						app.icono = obtenIcono( condicionIcono );
+
+
+						//vamos al siguiente paso en el proceso: el “pintado” de los elementos en pantalla
+
+
+						function obtenIcono(weatherIcon) {
+
+							var icon;
+							switch( weatherIcon ){
+								case "01d":
+									icon = "http://openweathermap.org/img/w/01d.png";
+									break;
+								case "01n":
+									icon = "http://openweathermap.org/img/w/01n.png";
+									break;
+								case "02d":
+									icon = "http://openweathermap.org/img/w/02d.png";
+									break;
+								case "02n":
+									icon = "http://openweathermap.org/img/w/02n.png";
+									break;
+								case "03d":
+									icon = "http://openweathermap.org/img/w/03d.png";
+									break;
+								case "03n":
+									icon = "http://openweathermap.org/img/w/03n.png";
+									break;
+								case "04d":
+									icon = "http://openweathermap.org/img/w/04n.png";
+									break;
+								case "04n":
+									icon = "http://openweathermap.org/img/w/04n.png";
+									break;
+								case "09d":
+									icon = "http://openweathermap.org/img/w/09n.png";
+									break;
+								case "09n":
+									icon = "http://openweathermap.org/img/w/09n.png";
+									break;
+								case "10d":
+									icon = "http://openweathermap.org/img/w/10n.png";
+									break;
+								case "10n":
+									icon = "http://openweathermap.org/img/w/10n.png";
+									break;
+								case "11d":
+									icon = "http://openweathermap.org/img/w/11n.png";
+									break;
+								case "11n":
+									icon = "http://openweathermap.org/img/w/11n.png";
+									break;
+								case "13d":
+									icon = "http://openweathermap.org/img/w/13n.png";
+									break;
+								case "13n":
+									icon = "http://openweathermap.org/img/w/13n.png";
+									break;
+								case "50d":
+									icon = "http://openweathermap.org/img/w/50n.png";
+									break;
+								case "50n":
+									icon = "http://openweathermap.org/img/w/50n.png";
+									break;
+
+							}
+							return icon;
+						}
+
+						muestra();
+
+
+
+						function  muestra (){
+							$('#js_w_icon').append('Icono : <img src="' + app.icono + '">');
+							$('#js_w_temp').append("Temperatura de ahora : "+app.temperatura);
+							$('#js_w_tempMin').append("Temperatura minima : " + app.temperaturaMin);
+							$('#js_w_tempMax').append("Temperatura maxima : " + app.temperaturaMax);
+							$('#js_w_humedad').append("Humedad : " + app.humedad + "%");
+
+
+							//y asi podriamos seguir todos lso datos que quisieramos en texto plano
+
+
+
+						}
+
+						//  };
+					},
+					error: function(){
+						alert("Error, no se pudo obtener los datos de la api");
+					}
+
+				});
+			}
+		</script>
 
     </head>
 	
@@ -285,12 +413,12 @@
 			<section id="portfolio">
 				<div class="container">
 					<div class="row">
-					
+
 						<div class="sec-title text-center wow animated fadeInDown">
 							<h2>MIS PROYECTO</h2>
-							<p>Estos son algunos de los proyectos que he llevado a cabo, en ellos he trabajado con diferentes herramientas.</p>
+							<!--<p>Estos son algunos de los proyectos que he llevado a cabo, en ellos he trabajado con diferentes herramientas.</p>-->
 						</div>
-						
+
 
 						<ul class="project-wrapper wow animated fadeInUp">
 							<li class="portfolio-item">
@@ -304,7 +432,7 @@
 									<li><a href=""><i class="fa fa-link"></i></a></li>
 								</ul>
 							</li>
-							
+
 							<li class="portfolio-item">
 								<img src="img/portfolio/item2.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
 								<figcaption class="mask">
@@ -316,8 +444,8 @@
 									<li><a href=""><i class="fa fa-link"></i></a></li>
 								</ul>
 							</li>
-							
-							<li class="portfolio-item">
+
+							<!--<li class="portfolio-item">
 								<img src="img/portfolio/item3.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
 								<figcaption class="mask">
 									<h3>Wall street</h3>
@@ -328,7 +456,7 @@
 									<li><a href=""><i class="fa fa-link"></i></a></li>
 								</ul>
 							</li>
-							
+
 							<li class="portfolio-item">
 								<img src="img/portfolio/item4.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry.">
 								<figcaption class="mask">
@@ -340,7 +468,7 @@
 									<li><a href=""><i class="fa fa-link"></i></a></li>
 								</ul>
 							</li>
-							
+
 							<li class="portfolio-item">
 								<img src="img/portfolio/item5.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
 								<figcaption class="mask">
@@ -352,7 +480,7 @@
 									<li><a href=""><i class="fa fa-link"></i></a></li>
 								</ul>
 							</li>
-							
+
 							<li class="portfolio-item">
 								<img src="img/portfolio/item6.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
 								<figcaption class="mask">
@@ -363,9 +491,44 @@
 									<li><a class="fancybox" title="Wall street 6" data-fancybox-group="works" href="img/portfolio/item6.jpg"><i class="fa fa-search"></i></a></li>
 									<li><a href=""><i class="fa fa-link"></i></a></li>
 								</ul>
-							</li>
+							</li>-->
 						</ul>
-						
+						<section class="section_main">
+							<div class="section__content">
+								<!--<h1>Conectando con la API de tiempo</h1>-->
+								<h2>El tiempo en Madrid</h2>
+								<!--        aqui es donde mostramos lo que nos viene de la funcion muestra con su respectivo id. -->
+								<div class="weather__icon" id="js_w_icon"></div>
+								<div class="weather__block" id="js_w_temp"></div> <!--Temperatura que tenemos ahora-->
+								<div class="weather__block" id="js_w_tempMin"></div><!--Temperatura minima-->
+								<div class="weather__block" id="js_w_tempMax"></div><!--Temperatura minima-->
+								<div class="weather__block" id="js_w_humedad"></div><!--Humedad-->
+
+								<br><div id="widget1">
+									<script src='http://openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script>
+									<div id='openweathermap-widget'></div>
+									<script type='text/javascript'>
+										window.myWidgetParam = {
+											id: 11, //esto nos lo proporciona el codigo de la propia api, es el id del widget
+											cityid: 3117735, // codigo de la ciudad que se puede encontrar en un json
+											appid: 'f02f9e55c77a7c0909f0970944e9913a', //key de la api
+											containerid: 'openweathermap-widget', //widget
+										};
+										(function() {
+											var script = document.createElement('script'); //creamos script en html
+											script.type = 'text/javascript'; //asignamos el tipo
+											script.async = true; //para ejecutar de forma asincrona
+											script.src = 'http://openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js'; //ruta donde se encuentra el codigo del widget
+											var s = document.getElementsByTagName('script')[0];
+											s.parentNode.insertBefore(script, s);
+										})();
+									</script>
+								</div>
+
+							</div>
+
+						</section>
+
 					</div>
 				</div>
 			</section>
@@ -528,8 +691,8 @@
 								<div class="input-field">
 									<textarea name="message" required="required" class="form-control" placeholder="Mensaje..."></textarea>
 								</div>
-								<input type="submit" name="enviar" tabindex="7" value="Enviar">
-								<input type="reset" tabindex="8" value="Borrar">
+								<input type="submit" class="btn btn-blue btn-effect" name="enviar" tabindex="7" value="Enviar">
+								<input type="reset" class="btn btn-blue btn-effect" tabindex="8" value="Borrar">
 								<input type="hidden" name="estado" value="1">
 							</form>
 						</div>

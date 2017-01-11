@@ -48,7 +48,7 @@ if(isset($_POST['enviar'])){
         if(mail($para, $asunto, $mensaje, $headers)){
             echo "Su mensaje se ha enviado correctamente";
             echo "<br />";
-            echo '<a href="../index.html">Volver</a>';
+            echo '<a href="../index.php">Volver</a>';
         }else{
             echo "Hubo un error en el envío inténtelo más tarde";
         }

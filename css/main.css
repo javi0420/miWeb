@@ -485,6 +485,8 @@ h1.navbar-brand {
 
 /* Project laughtbox setup */
 
+
+
 .fancybox-item.fancybox-close {
     background: url("../img/icons/close.png") no-repeat scroll 0 0 transparent;
     height: 50px;
@@ -614,6 +616,9 @@ h1.navbar-brand {
 	Portfolio
 ==================================================================*/
 
+.section__content{
+    text-align: center;
+}
 .project-wrapper {
     margin: 0;
     padding: 0;
@@ -623,6 +628,11 @@ h1.navbar-brand {
 
 .project-wrapper li {
     display: inline-block;
+}
+
+#widget1{
+    text-align: center;
+    padding-left: 23%
 }
 
 .portfolio-item {
